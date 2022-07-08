@@ -1,9 +1,12 @@
 class Solution {
     fun twoSum(nums: IntArray, target: Int): IntArray {
+        val numMap = mutableMapOf<Int, Int>()
         for (i in nums.indices){
-            for (j in i+1 until nums.size) {
-                if (nums[i] + nums[j] == target) return intArrayOf(i, j)
+            val firstValue = target - nums[i]
+            if (numMap.containsKey(firstValue)) {
+                return intArrayOf(numMap.getValue(firstValue), i)
             }
+            numMap[nums[i]] = i
         }
         return intArrayOf(0,0)
     }

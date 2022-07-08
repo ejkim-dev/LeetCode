@@ -5,12 +5,13 @@ class Solution {
             x < 0 -> false
             else -> {
                 var temp = x
-                var strReverse: String = ""
+                var reverse = 0.0
                 while (temp > 0) {
-                    strReverse += temp % 10
+                    reverse *= 10
+                    reverse += (temp % 10)
                     temp /= 10
                 }
-                x.toString() == strReverse
+                x.toDouble() == reverse
             }
         }
     }

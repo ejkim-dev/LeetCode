@@ -6,11 +6,9 @@ class Solution {
             else -> {
                 var temp = x
                 var strReverse: String = ""
-                var i = 1
                 while (temp > 0) {
                     strReverse += temp % 10
                     temp /= 10
-                    i++
                 }
                 x.toString() == strReverse
             }
